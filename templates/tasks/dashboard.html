@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Главная | Task Manager Pro{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <!-- Шапка с статистикой -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary">
+            <i class="fas fa-tasks me-2"></i>Ближайшие задачи
+        </h2>
+        <div class="stats">
+            <span class="badge bg-info me-2">
+                <i class="fas fa-list-check me-1"></i> {{ tasks|length }} задач
+            </span>
+            <span class="badge bg-warning text-dark">
+                <i class="fas fa-star me-1"></i> {{ total_points }} очков
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Форма создания -->
+        <div class="col-md-5 mb-4">
+            <div class="card border-primary shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-plus-circle me-2"></i>Создать задачу
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/add_task">
+                        <div class="mb-3">
+                            <label class="form-label">Название</label>
+                            <input type="text" class="form-control" name="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Описание</label>
+                            <textarea class="form-control" name="description" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Тип напоминания</label>
+                            <select class="form-select" name="reminder">
+                                <option value="once">Один раз</option>
+                                <option value="daily">Ежедневно</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Количество очков за выполнение</label>
+                            <input type="number" class="form-control" name="points" rows="3">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Исполнитель</label>
+                            <select class="form-select" name="users">
+                                {% for worker in users %}
+                                <option value="{{ worker.id }}">{{ worker.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2">
+                            <i class="fas fa-save me-1"></i> Создать
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Список задач -->
+        <div class="col-md-7">
+            <div class="card shadow">
+                <div class="card-header bg-white">
+                    <h4 class="mb-0 text-primary">
+                        <i class="fas fa-clipboard-list me-2"></i>Активные задачи
+                    </h4>
+                </div>
+                <div class="card-body p-0">
+                    {% for task in tasks %}
+                    <div class="task-item p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1">
+                                {{ task.title }}
+                            </h5>
+                            <p class="text-muted mb-0">{{ task.description }}</p>
+                            <span class="badge bg-success mt-2">
+                                {{ task.points }} очков
+                            </span>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-success">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .task-item:hover {
+        background-color: #f8f9fa;
+    }
+    .card-header {
+        border-radius: 0.5rem 0.5rem 0 0 !important;
+    }
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+    }
+</style>
+{% endblock %}

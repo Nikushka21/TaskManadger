@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h4>Ваши коллеги</h4>
+            </div>
+            <div class="card-body">
+                <form class="mb-4">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email друга">
+                        <button class="btn btn-primary">Добавить друга</button>
+                    </div>
+                </form>
+
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        friend@example.com
+                        <button class="btn btn-sm btn-danger">Удалить</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
