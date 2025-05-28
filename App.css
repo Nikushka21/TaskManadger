@@ -1,0 +1,331 @@
+/*.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.task.completed {
+  border-left: 4px solid #4CAF50;
+}
+
+.task.closed {
+  border-left: 4px solid #f44336;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+*/
+/* App.css */
+
+/*body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4f46e5;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #1e40af;
+}
+
+.auth-form,
+.task-editor,
+.friends-manager,
+.dashboard,
+.task-manager {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.auth-form input,
+.task-editor input,
+.task-editor textarea,
+.task-editor select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.task {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  background-color: #fff;
+  transition: background 0.3s;
+}
+
+.task.completed {
+  background-color: #d1fae5;
+}
+
+.task.closed {
+  background-color: #fca5a5;
+}
+
+.task h3 {
+  margin: 0 0 0.4rem 0;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.add-button {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.add-button:hover {
+  background-color: #059669;
+}
+
+@media (max-width: 600px) {
+  .task-actions {
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+}
+*/
+/* Общие стили */
+/* App.css */
+/* Общие стили */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+nav {
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.auth-form, .task-manager, .friends-manager {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form input, 
+.task-editor input, 
+.task-editor textarea, 
+.task-editor select, 
+.friends-manager input {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.task-editor select {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button.remove-button {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+button.remove-button:hover {
+  background-color: #c82333;
+}
+
+.add-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #007bff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task {
+  background-color: #fefefe;
+  margin-bottom: 12px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.task h3 {
+  margin-top: 0;
+}
+
+.task.completed {
+  background-color: #d4edda;
+}
+
+.task.closed {
+  background-color: #f8d7da;
+}
+
+.task-actions button {
+  margin-right: 10px;
+}
+
+.executor-label {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.dashboard p {
+  margin: 5px 0;
+}
+
